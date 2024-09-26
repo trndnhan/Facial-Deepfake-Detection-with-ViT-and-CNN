@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload and Generation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .centered {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        form {
+            margin: 15px 0;
+        }
+
+        input[type="file"], select {
+            margin: 5px 0;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            max-height: 300px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        #classification_result {
+            margin-top: 5px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .row-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .uploaded-image-container {
+            text-align: center;
+        }
+
+        .generated-image-container {
+            text-align: center;
+        }
+
+        .processed-images-container h3 {
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        .processed-images-container h2 {
+            margin-bottom: 10px; 
+        }
+
+        .image-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        img {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .image-container div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+    </style>
+    <script>
+        async function classifyImage() {
+            const processedImageUrl = document.getElementById("processed_image_url").value;
+            const classifierModel = document.getElementById("classifier_model").value;
+
+            const response = await fetch('/classify', {
+                method: 'POST',
+                body: new URLSearchParams({
+                    processed_image_url: processedImageUrl,
+                    classifier_model: classifierModel 
+                })
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                document.getElementById("classification_result").innerText = data.prediction;
+            } else {
+                document.getElementById("classification_result").innerText = "Error: " + data.error;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="centered">
+        <h1>Upload or Generate an Image</h1>
+
+        <!-- Image upload form -->
+        <form action="/upload" enctype="multipart/form-data" method="post">
+            <input type="file" name="image">
+            <button type="submit">Upload Image</button>
+        </form>
+
+        <!-- Generate an image form -->
+        <form action="/generate" method="get">
+            <button type="submit">Generate Face Portrait</button>
+        </form>
+
+        <!-- Display the uploaded and processed images -->
+        {% if uploaded_image_url %}
+        <div class="row-container">
+            <div class="uploaded-image-container">
+                <h2>Uploaded Image</h2>
+                <img src="{{ uploaded_image_url }}" alt="Uploaded Image">
+            </div>
+
+            <div class="processed-images-container">
+                <h2>Processed Images</h2>
+                <div class="image-container">
+                    <div>
+                        <h3>ViT Processed Image</h3>
+                        <img src="{{ vit_processed_url }}" alt="ViT Processed Image">
+                    </div>
+                    <div>
+                        <h3>ResNet Processed Image</h3>
+                        <img src="{{ rn_processed_url }}" alt="ResNet Processed Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Classification form -->
+        <form onsubmit="event.preventDefault(); classifyImage();">
+            <input type="hidden" id="processed_image_url" value="{{ vit_processed_url }}">
+            <select id="classifier_model">
+                <option value="vit_base">ViT base</option>
+                <option value="rn_base">ResNet50 base</option>
+                <option value="vit_lora">LoRA ViT</option>
+                <option value="rn_lora">LoRA ResNet50</option>
+            </select>
+            <button type="submit">Classify Image</button>
+        </form>
+        {% endif %}
+
+        <!-- Display the generated and processed images -->
+        {% if generated_image_url %}
+        <div class="row-container">
+            <div class="generated-image-container">
+                <h2>Generated Image</h2>
+                <img src="{{ generated_image_url }}" alt="Generated Image">
+            </div>
+        
+            <div class="processed-images-container">
+                <h2>Processed Images</h2>
+                <div class="image-container">
+                    <div>
+                        <h3>ViT Processed Image</h3>
+                        <img src="{{ vit_processed_url }}" alt="ViT Processed Image">
+                    </div>
+                    <div>
+                        <h3>ResNet Processed Image</h3>
+                        <img src="{{ rn_processed_url }}" alt="ResNet Processed Image">
+                    </div>
+                </div>
+            </div>
+        </div>        
+
+        <!-- Classification form -->
+        <form onsubmit="event.preventDefault(); classifyImage();">
+            <input type="hidden" id="processed_image_url" value="{{ vit_processed_url }}">
+            <select id="classifier_model">
+                <option value="vit_base">ViT base</option>
+                <option value="rn_base">ResNet50 base</option>
+                <option value="vit_lora">LoRA ViT</option>
+                <option value="rn_lora">LoRA ResNet50</option>
+            </select>
+            <button type="submit">Classify Image</button>
+        </form>
+        {% endif %}
+
+        <!-- Display the classification result -->
+        <h2 id="classification_result"></h2>
+    </div>
+</body>
+</html>
