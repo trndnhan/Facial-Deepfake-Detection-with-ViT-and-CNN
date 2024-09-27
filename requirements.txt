@@ -1,0 +1,25 @@
+python >= 3.8
+pip
+numpy>=1.20
+click>=8.0
+pillow
+scipy
+pytorch
+cudatoolkit
+requests
+tqdm
+ninja
+matplotlib
+imageio
+imgui
+glfw
+pyopeng1
+imageio-ffmpeg
+pyspng
+fastapi
+torchvision
+transformers
+peft
+PIL
+uvicorn
+
