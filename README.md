@@ -92,3 +92,4 @@ To get started with the repository, you can follow these steps:
 -   **Full comparative analysis** between ViT and ResNet50 models with/without LoRA.
 -   **Thesis paper release** for public access.
 -   **Final model versions** will be pushed to Hugging Face Hub.
+-   **Model deployment** using cloud platform and following MLOps cycle
