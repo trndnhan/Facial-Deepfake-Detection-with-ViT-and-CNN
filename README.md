@@ -40,8 +40,6 @@ Facial-Deepfake-Detection-with-ViT-and-ResNet50/
 ├── backend.py                      # FastAPI backend for serving the demo
 │
 ├── requirements.txt                # List of required packages
-│
-└── Web demo.mp4                    # Video showcasing the demo in action` 
 ```
 ----------
 
@@ -62,3 +60,35 @@ https://github.com/user-attachments/assets/d49c4e7d-727c-49de-8fe2-439f71296e3e
 -   Upload or generate an image using **StyleGAN3**.
 -   Choose the model (ViT or ResNet50) to classify whether the image is **real** or a **deepfake**.
 -   Predictions are displayed directly on the web interface.
+----------
+
+## 🔧 Installation & Usage
+
+To get started with the repository, you can follow these steps:
+
+1.  **Clone the repository**:
+    
+   ``` bash
+    git clone https://github.com/your-username/Facial-Deepfake-Detection-with-ViT-and-ResNet50.git
+    cd Facial-Deepfake-Detection-with-ViT-and-ResNet50` 
+```
+    
+2.  **Install dependencies**:
+    
+   ``` bash
+    `pip install -r requirements.txt` 
+   ```
+    
+3.  **Run the web demo**:
+    
+   ```bash
+    `uvicorn backend:app --reload` 
+   ```
+    
+4.  Open your browser and navigate to `http://127.0.0.1:8000` to access the web interface.
+ --------
+## 📅 Future Updates
+
+-   **Full comparative analysis** between ViT and ResNet50 models with/without LoRA.
+-   **Thesis paper release** for public access.
+-   **Final model versions** will be pushed to Hugging Face Hub.
