@@ -42,6 +42,17 @@ Facial-Deepfake-Detection-with-ViT-and-ResNet50/
 ├── requirements.txt                # List of required packages
 ```
 ----------
+## 🔗 Fine-Tuned Models on Hugging Face
+You can access my current fine-tuned models (1 epoch) directly on Hugging Face:
+
+-   [Fine-Tuned ViT Model](https:/huggingface.co/1ancelot/vit_base)
+-   [Fine-Tuned ResNet50 Model](https:/huggingface.co/1ancelot/rn_base)
+-   [Fine-Tuned LoRA-injected ViT Model](https:/huggingface.co/1ancelot/vit_lora)
+-   [Fine-Tuned LoRA-injected ResNet50 Model](https:/huggingface.co/1ancelot/rn_lora)
+
+Feel free to explore the models and their capabilities!
+
+----------
 
 ## 📜 Thesis Paper 📝
 -   **Title**: _Comparative Analysis of Vision Transformers and Convolutional Neural Networks for Deepfake Detection in Human Faces with Low-Rank Adaptation_
