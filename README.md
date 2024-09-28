@@ -54,7 +54,7 @@ Facial-Deepfake-Detection-with-ViT-and-ResNet50/
 ## 🚀 Web Demo Overview
 
 Curious about the demo but don’t want to run it yourself? Check out the demo in action below! 👇
-(https://raw.githubusercontent.com/1ancelot/Facial-Deepfake-Detection-with-ViT-and-CNN/main/assets/Video demo.mp4)
+(https://raw.githubusercontent.com/1ancelot/Facial-Deepfake-Detection-with-ViT-and-CNN/main/assets/Web%20demo.mp4)
 
 ### ✨ Features:
 
