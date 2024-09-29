@@ -48,7 +48,7 @@ Facial-Deepfake-Detection-with-ViT-and-ResNet50/
 
 ### 🎓 During training:
 -   **vit_lora** is the most accurate model, achieving the highest overall accuracy (0.638) and lowest loss (0.6387).
-- **rn_lora** performs the worst (0.566 accuracy and 0.6874 loss), indicating that the chosen layer for LoRA fine-tuning might not benefit the ResNet architecture as much as it does for the Vision Transformer.
+- **rn_lora** performs the worst (0.566 accuracy and 0.6874 loss), indicating that the chosen layers for LoRA fine-tuning might not benefit the ResNet architecture as much as it does for the Vision Transformer.
 - Both **rn_base** (0.6025 accuracy and 0.6808 loss) and **vit_base** (0.6105 accuracy and 0.6645 loss) are relatively stable but do not perform as well as **vit_lora**.
 
 ### 🧑‍💻 During evaluation:
