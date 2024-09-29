@@ -56,7 +56,7 @@ Facial-Deepfake-Detection-with-ViT-and-ResNet50/
 -   **rn_lora** (0.58 accuracy) suffers from a major imbalance, overfitting to fake images and severely underperforming on real images. This leads to reduced accuracy and poor recall for real images.
 -   **vit_lora** (0.66 accuracy) performs significantly better than **rn_lora** and achieves the highest overall accuracy (~0.66). It also maintains a good balance between fake and real class detection, making it a better candidate for balanced detection tasks.
 
-*These remarks are not the final version, further training iterations may help refine the performance of the models.*
+*These remarks are not the final version, further training iterations may help refine the performance of the models. For detailed statistics and visualization please refer to Thesis Notebook.ipynb*
 
 ----------
 
