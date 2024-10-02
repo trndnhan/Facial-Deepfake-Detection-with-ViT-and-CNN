@@ -2,6 +2,8 @@
 # Facial-Deepfake-Detection-with-ViT-and-ResNet50 🎭🔍
 _This repository is part of my thesis project on deepfake detection using Vision Transformers (ViT) and Convolutional Neural Networks (CNN), both with and without Low-Rank Adaptation (LoRA)._
 
+_💜 This project has not finished yet, make sure to check this repo once in a while for further updates. I will update the training progress in the notebook file everyday and the evaluation statistic and graph after each epoch._
+
 ----------
 
 
@@ -47,6 +49,8 @@ Facial-Deepfake-Detection-with-ViT-and-ResNet50/
 ## 📊 Current Insight on Performance (1st epoch)
 
 ### 🎓 During training:
+![image](https://github.com/user-attachments/assets/a787bbd6-c1f3-44b2-ae3e-dc3a17ee298a)
+
 -   **vit_lora** is the most accurate model, achieving the highest overall accuracy (0.638) and lowest loss (0.6387).
 - **rn_lora** performs the worst (0.566 accuracy and 0.6874 loss), indicating that the chosen layers for LoRA fine-tuning might not benefit the ResNet architecture as much as it does for the Vision Transformer.
 - Both **rn_base** (0.6025 accuracy and 0.6808 loss) and **vit_base** (0.6105 accuracy and 0.6645 loss) are relatively stable but do not perform as well as **vit_lora**.
