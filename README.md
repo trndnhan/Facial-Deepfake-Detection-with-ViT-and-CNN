@@ -49,16 +49,21 @@ Facial-Deepfake-Detection-with-ViT-and-ResNet50/
 ## 📊 Current Insight on Performance (1st epoch)
 
 ### 🎓 During training:
-![image](https://github.com/user-attachments/assets/a787bbd6-c1f3-44b2-ae3e-dc3a17ee298a)
+![image](https://github.com/user-attachments/assets/90e5259b-3204-4ad6-9924-624c380e9387)
 
--   **vit_lora** is the most accurate model, achieving the highest overall accuracy (0.638) and lowest loss (0.6387).
-- **rn_lora** performs the worst (0.566 accuracy and 0.6874 loss), indicating that the chosen layers for LoRA fine-tuning might not benefit the ResNet architecture as much as it does for the Vision Transformer.
-- Both **rn_base** (0.6025 accuracy and 0.6808 loss) and **vit_base** (0.6105 accuracy and 0.6645 loss) are relatively stable but do not perform as well as **vit_lora**.
+
+-   **vit_lora** is the most accurate model, achieving the highest overall accuracy (0.65) and lowest loss (0.628).
+- **rn_lora** (Accuracy: 0.5905, Loss: 0.6848) performs the worst, indicating that the chosen layer for LoRA fine-tuning might not benefit the ResNet architecture as much as it does for the Vision Transformer.
+- Both **rn_base** (Accuracy: 0.6055, Loss: 0.6796) and **vit_base** (Accuracy: 0.6135, Loss: 0.6568) are relatively stable but do not perform as well as **vit_lora**.
 
 ### 🧑‍💻 During evaluation:
--   **rn_base** (0.61 accuracy) shows slightly better performance than **vit_base** (0.63 accuracy) in detecting real images, but **vit_base** is more balanced overall, especially for detecting fakes.
--   **rn_lora** (0.58 accuracy) suffers from a major imbalance, overfitting to fake images and severely underperforming on real images. This leads to reduced accuracy and poor recall for real images.
--   **vit_lora** (0.66 accuracy) performs significantly better than **rn_lora** and achieves the highest overall accuracy (~0.66). It also maintains a good balance between fake and real class detection, making it a better candidate for balanced detection tasks.
+![image](https://github.com/user-attachments/assets/785e2ee4-8e83-4b5c-9973-f3de10102298)
+
+-   **vit_base** (Accuracy: 0.64) shows slightly better performance than **rn_base** (Accuracy: 0.63) in detecting real images and is more balanced overall, especially for detecting fakes.
+-   **rn_lora** (Accuracy: 0.54) suffers from a major imbalance, overfitting to fake images and severely underperforming on real images. This leads to reduced accuracy and poor recall for real images.
+-   **vit_lora** (Accuracy: 0.67) performs significantly better than **rn_lora** and achieves the highest overall accuracy. It also maintains a good balance between fake and real class detection, making it a better candidate for balanced detection tasks.
+
+*These remarks are not the final version, further training iterations may help refine the performance of the models.*
 
 *These remarks are not the final version, further training iterations may help refine the performance of the models. For detailed statistics and visualization please refer to Thesis Notebook.ipynb*
 
