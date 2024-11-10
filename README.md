@@ -24,6 +24,7 @@ _💜 This project has not finished yet, make sure to check this repo once in a 
 ### 🌐 Inference Demo:
 
 A **web-based demo** is built using **FastAPI**. This allows users to either upload an image or generate one via **StyleGAN3** and then select the model (ViT or ResNet50) for prediction. The models are hosted on HuggingFace's hub for easy access.
+
 _The models are outdated, but they can still be run for demonstration purposes. The new models are under development and will be pushed on the HuggingFace's model before the end of this year._
 
 ---
