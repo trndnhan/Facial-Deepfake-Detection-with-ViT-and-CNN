@@ -14,7 +14,7 @@ _💜 This project has not finished yet, make sure to check this repo once in a 
 -   **Vision Transformer (ViT)**: [google/vit-base-patch16-224](https://huggingface.co/google/vit-base-patch16-224)
 -   **Convolutional Neural Network (ResNet50)**: [microsoft/resnet-50](https://huggingface.co/microsoft/resnet-50)
 -   **Training Framework**: HuggingFace's Trainer
--   **Dataset**: 100k images from a Kaggle dataset (50k real, 50k fake). (The original dataset have 140k images but only 100k were used: [140k Real and Fake Faces](https://www.kaggle.com/datasets/xhlulu/140k-real-and-fake-faces))
+-   **Dataset**: 100k images from a Kaggle dataset (70k real, 70k fake). ([140k Real and Fake Faces](https://www.kaggle.com/datasets/xhlulu/140k-real-and-fake-faces))
 
 ### 🚀 Goals:
 
@@ -24,6 +24,7 @@ _💜 This project has not finished yet, make sure to check this repo once in a 
 ### 🌐 Inference Demo:
 
 A **web-based demo** is built using **FastAPI**. This allows users to either upload an image or generate one via **StyleGAN3** and then select the model (ViT or ResNet50) for prediction. The models are hosted on HuggingFace's hub for easy access.
+_The models are outdated, but they can still be run for demonstration purposes. The new models are under development and will be pushed on the HuggingFace's model before the end of this year._
 
 ---
 
@@ -37,7 +38,7 @@ Facial-Deepfake-Detection-with-ViT-and-ResNet50/
 ├── templates/
 │   └── index.html                 # HTML template for the web demo
 │
-├── Thesis_Notebook.ipynb           # Jupyter notebook containing model training code
+├── Thesis_Notebook.ipynb           # Jupyter notebook containing model training code.
 │
 ├── backend.py                      # FastAPI backend for serving the demo
 │
@@ -63,9 +64,7 @@ Facial-Deepfake-Detection-with-ViT-and-ResNet50/
 -   **rn_lora** (Accuracy: 0.54) suffers from a major imbalance, overfitting to fake images and severely underperforming on real images. This leads to reduced accuracy and poor recall for real images.
 -   **vit_lora** (Accuracy: 0.67) performs significantly better than **rn_lora** and achieves the highest overall accuracy. It also maintains a good balance between fake and real class detection, making it a better candidate for balanced detection tasks.
 
-*These remarks are not the final version, further training iterations may help refine the performance of the models.*
-
-*These remarks are not the final version, further training iterations may help refine the performance of the models. For detailed statistics and visualization please refer to Thesis Notebook.ipynb*
+*These remarks are outdated, the updated version of the models is under development, the new remarks will be written after pushing the models to HuggingFace's hub.*
 
 ----------
 
@@ -78,6 +77,8 @@ You can access my current fine-tuned models (1 epoch) directly on Hugging Face:
 -   [Fine-Tuned LoRA-injected ResNet50 Model](https:/huggingface.co/1ancelot/rn_lora)
 
 Feel free to explore the models and their capabilities!
+
+_The models are outdated, but they can still be run for demonstration purposes. The new models are under development and will be pushed on the HuggingFace's model before the end of this year._
 
 ----------
 
