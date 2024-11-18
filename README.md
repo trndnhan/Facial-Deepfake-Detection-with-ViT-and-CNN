@@ -77,9 +77,9 @@ Facial-Deepfake-Detection-with-ViT-and-ResNet50/
 You can access my current fine-tuned models (2 epochs) directly on Hugging Face:
 
 -   [Fine-Tuned ViT Model](https://huggingface.co/1ancelot/vit_base)
--   [Fine-Tuned ResNet50 Model](https:/huggingface.co/1ancelot/rn_base)
--   [Fine-Tuned LoRA-injected ViT Model](https:/huggingface.co/1ancelot/vit_lora)
--   [Fine-Tuned LoRA-injected ResNet50 Model](https:/huggingface.co/1ancelot/rn_lora)
+-   [Fine-Tuned ResNet50 Model](https://huggingface.co/1ancelot/rn_base)
+-   [Fine-Tuned LoRA-injected ViT Model](https://huggingface.co/1ancelot/vit_lora)
+-   [Fine-Tuned LoRA-injected ResNet50 Model](https://huggingface.co/1ancelot/rn_lora)
 
 Feel free to explore the models and their capabilities!
 
