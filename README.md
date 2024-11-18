@@ -25,7 +25,7 @@ _💜 This project has not finished yet, make sure to check this repo once in a 
 
 A **web-based demo** is built using **FastAPI**. This allows users to either upload an image or generate one via **StyleGAN3** and then select the model (ViT or ResNet50) for prediction. The models are hosted on HuggingFace's hub for easy access.
 
-_The models are outdated, but they can still be run for demonstration purposes. The new models are under development and will be pushed on the HuggingFace's model before the end of this year._
+_The models are not the final version, further training iterations may help refine the performance of the models._
 
 ---
 
@@ -36,6 +36,8 @@ Facial-Deepfake-Detection-with-ViT-and-ResNet50/
 │
 ├── stylegan3/                     # Pulled from NVIDIA's GitHub
 │
+├── uploads/                     # Sample images
+│
 ├── templates/
 │   └── index.html                 # HTML template for the web demo
 │
@@ -44,11 +46,13 @@ Facial-Deepfake-Detection-with-ViT-and-ResNet50/
 ├── backend.py                      # FastAPI backend for serving the demo
 │
 ├── requirements.txt                # List of required packages
+│
+├── training.csv                # Training metrics
 ```
 
  --------
  
-## 📊 Current Insight on Performance (1st epoch)
+## 📊 Current Insight on Performance (2nd epoch)
 
 ### 🎓 During training:
 ![image](https://github.com/user-attachments/assets/7a53d0d2-cb5e-480c-8f7f-41735dba6f30)
@@ -70,7 +74,7 @@ Facial-Deepfake-Detection-with-ViT-and-ResNet50/
 ----------
 
 ## 🔗 Fine-Tuned Models on Hugging Face
-You can access my current fine-tuned models (1 epoch) directly on Hugging Face:
+You can access my current fine-tuned models (2 epochs) directly on Hugging Face:
 
 -   [Fine-Tuned ViT Model](https:/huggingface.co/1ancelot/vit_base)
 -   [Fine-Tuned ResNet50 Model](https:/huggingface.co/1ancelot/rn_base)
@@ -79,7 +83,7 @@ You can access my current fine-tuned models (1 epoch) directly on Hugging Face:
 
 Feel free to explore the models and their capabilities!
 
-_The models are outdated, but they can still be run for demonstration purposes. The new models are under development and will be pushed on the HuggingFace's model before the end of this year._
+_The models are not the final version, further training iterations may help refine the performance of the models._
 
 ----------
 
