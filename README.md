@@ -25,7 +25,7 @@ _💜 This project has not finished yet, make sure to check this repo once in a 
 
 A **web-based demo** is built using **FastAPI**. This allows users to either upload an image or generate one via **StyleGAN3** and then select the model (ViT or ResNet50) for prediction. The models are hosted on HuggingFace's hub for easy access.
 
-_The models are outdated, but they can still be run for demonstration purposes. The new models are under development and will be pushed on the HuggingFace's model before the end of this year._
+_The models are not the final version, further training iterations may help refine the performance of the models._
 
 ---
 
@@ -36,6 +36,8 @@ Facial-Deepfake-Detection-with-ViT-and-ResNet50/
 │
 ├── stylegan3/                     # Pulled from NVIDIA's GitHub
 │
+├── uploads/                     # Sample images
+│
 ├── templates/
 │   └── index.html                 # HTML template for the web demo
 │
@@ -44,42 +46,42 @@ Facial-Deepfake-Detection-with-ViT-and-ResNet50/
 ├── backend.py                      # FastAPI backend for serving the demo
 │
 ├── requirements.txt                # List of required packages
+│
+├── training.csv                # Training metrics
 ```
 
  --------
  
-## 📊 Current Insight on Performance (1st epoch)
+## 📊 Current Insight on Performance (2nd epoch)
 
 ### 🎓 During training:
-![image](https://github.com/user-attachments/assets/7a53d0d2-cb5e-480c-8f7f-41735dba6f30)
+![image](https://github.com/user-attachments/assets/62e001f0-7be1-4d4c-8536-1292ddb53015)
 
-
--   **vit_lora** is the most accurate model, achieving the highest overall accuracy (0.9452), F1 Score (0.9456) and lowest loss (	0.3025). But this model, at the same time, took the logest time to train and was the most computationally expensive.
-- **rn_base** (Accuracy: 0.7028, Loss: 0.6078, F1 Score: 0.6959) performs the worst across all metrics, despite having the shortest train time and being least computationally expensive.
-- Both **rn_lora** (Accuracy: 0.7694, Loss: 0.5276, F1 Score: 0.7698) and **vit_base** (Accuracy: 0.8115, Loss: 0.4791, F1 Score: 0.8138) are relatively stable but do not perform as well as **vit_lora** as bad as **rn_base**.
+-   **vit_lora** is the most accurate model, achieving the highest overall accuracy (0.9516), F1 Score (0.9519) and lowest loss (0.2887). But this model, at the same time, took the logest time to train and was the most computationally expensive.
+- **rn_base** (Accuracy: 0.7067, Loss: 0.6015, F1 Score: 0.6976) performs the worst across all metrics, despite having the shortest train time and being least computationally expensive.
+- Both **rn_lora** (Accuracy: 0.7854, Loss: 0.5097, F1 Score: 0.7857) and **vit_base** (Accuracy: 0.8178, Loss: 0.4716, F1 Score: 0.8193) are relatively stable but do not perform as well as **vit_lora** and as bad as **rn_base**.
 - Both LoRA-injected models are performing better than their base respective models. ViT, in general, still beats ResNet with/without LoRA in terms of performance metrics, but is significantly more computational expensive and has much longer train time.
 
 ### 🧑‍💻 During evaluation:
-
 -   The metrics from validation set indicate that the models are generalizing well to unseen data and not overfitting. All of the models also perform well in both classes and show no sign of bias. 
--   **vit_lora** (Accuracy: 0.95) maintains the same metrics while training and is the best-performance model. Both **rn_lora** and **vit_base** have the same accuracy (~0.8), while **rn_base** still has the worst accuracy (0.72).
--   Overall, the models have strong consistency between training and validation. The ResNet models, in this case, have even higher accuracy while training (~2-4%)
+-   **vit_lora** (Accuracy: 0.95) maintains the same metrics while training and is the best-performance model. Both **rn_base** (0.72) and **vit_base** (0.82) have somewhat okay accuracy, while **rn_lora** has the worst accuracy and shows signs of bias toward the negative class (0.66).
+-   Overall, the models have strong consistency between training and validation, except the LoRA-injected ResNet model.
 
 *These remarks are not the final version, further training iterations may help refine the performance of the models.*
 
 ----------
 
 ## 🔗 Fine-Tuned Models on Hugging Face
-You can access my current fine-tuned models (1 epoch) directly on Hugging Face:
+You can access my current fine-tuned models (2 epochs) directly on Hugging Face:
 
--   [Fine-Tuned ViT Model](https:/huggingface.co/1ancelot/vit_base)
--   [Fine-Tuned ResNet50 Model](https:/huggingface.co/1ancelot/rn_base)
--   [Fine-Tuned LoRA-injected ViT Model](https:/huggingface.co/1ancelot/vit_lora)
--   [Fine-Tuned LoRA-injected ResNet50 Model](https:/huggingface.co/1ancelot/rn_lora)
+-   [Fine-Tuned ViT Model](https://huggingface.co/1ancelot/vit_base)
+-   [Fine-Tuned ResNet50 Model](https://huggingface.co/1ancelot/rn_base)
+-   [Fine-Tuned LoRA-injected ViT Model](https://huggingface.co/1ancelot/vit_lora)
+-   [Fine-Tuned LoRA-injected ResNet50 Model](https://huggingface.co/1ancelot/rn_lora)
 
 Feel free to explore the models and their capabilities!
 
-_The models are outdated, but they can still be run for demonstration purposes. The new models are under development and will be pushed on the HuggingFace's model before the end of this year._
+_The models are not the final version, further training iterations may help refine the performance of the models._
 
 ----------
 
