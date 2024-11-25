@@ -54,7 +54,7 @@ _If previewing the notebook on GitHub gives an 'Unable to render code block' err
 
  --------
  
-## 📊 Current Insight on Performance (2nd epoch)
+## 📊 Current Insight on Performance (3rd epoch)
 
 ### 🎓 During training:
 ![image](https://github.com/user-attachments/assets/62e001f0-7be1-4d4c-8536-1292ddb53015)
