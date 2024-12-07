@@ -14,7 +14,7 @@ _💜 This project has not finished yet, make sure to check this repo once in a 
 -   **Vision Transformer (ViT)**: [google/vit-base-patch16-224](https://huggingface.co/google/vit-base-patch16-224)
 -   **Convolutional Neural Network (ResNet50)**: [microsoft/resnet-50](https://huggingface.co/microsoft/resnet-50)
 -   **Training Framework**: HuggingFace's Trainer
--   **Dataset**: 100k images from a Kaggle dataset (70k real, 70k fake). ([140k Real and Fake Faces](https://www.kaggle.com/datasets/xhlulu/140k-real-and-fake-faces))
+-   **Dataset**: 140k images from a Kaggle dataset (70k real, 70k fake). ([140k Real and Fake Faces](https://www.kaggle.com/datasets/xhlulu/140k-real-and-fake-faces))
 
 ### 🚀 Goals:
 
@@ -52,7 +52,7 @@ Facial-Deepfake-Detection-with-ViT-and-ResNet50/
 
  --------
  
-## 📊 Current Insight on Performance (3rd epoch)
+## 📊 Current Insight on Performance (5th epoch)
 
 ### 🎓 During training:
 ![image](https://github.com/user-attachments/assets/ce0db142-2a5c-4b89-addb-f8c2f448ce7f)
