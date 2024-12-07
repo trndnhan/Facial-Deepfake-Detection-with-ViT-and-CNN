@@ -57,17 +57,23 @@ _If previewing the notebook on GitHub gives an 'Unable to render code block' err
 ## 📊 Current Insight on Performance (3rd epoch)
 
 ### 🎓 During training:
-![image](https://github.com/user-attachments/assets/62e001f0-7be1-4d4c-8536-1292ddb53015)
+![image](https://github.com/user-attachments/assets/ce0db142-2a5c-4b89-addb-f8c2f448ce7f)
+![image](https://github.com/user-attachments/assets/ae59e4e2-0f65-4a49-9022-be0bbff1fedb)
+![image](https://github.com/user-attachments/assets/af357d06-8ed4-4e03-8bed-977b8a4ecd18)
 
--   **vit_lora** is the most accurate model, achieving the highest overall accuracy (0.9516), F1 Score (0.9519) and lowest loss (0.2887). But this model, at the same time, took the logest time to train and was the most computationally expensive.
-- **rn_base** (Accuracy: 0.7067, Loss: 0.6015, F1 Score: 0.6976) performs the worst across all metrics, despite having the shortest train time and being least computationally expensive.
-- Both **rn_lora** (Accuracy: 0.7854, Loss: 0.5097, F1 Score: 0.7857) and **vit_base** (Accuracy: 0.8178, Loss: 0.4716, F1 Score: 0.8193) are relatively stable but do not perform as well as **vit_lora** and as bad as **rn_base**.
-- Both LoRA-injected models are performing better than their base respective models. ViT, in general, still beats ResNet with/without LoRA in terms of performance metrics, but is significantly more computational expensive and has much longer train time.
+-   **vit_lora** is the most accurate model, achieving the highest overall **Accuracy (0.9559)**, **F1 Score (0.9561)** and lowest **Loss (0.276)**. But this model, at the same time, took the logest time to train (52.42 hours) and was the most computationally expensive.
+- **rn_base (Accuracy: 0.7048, Loss: 0.6001, F1 Score: 0.698)** performs the worst across all metrics, despite having the shortest train time **(6.19 hours)** and being least computationally expensive.
+- Both **rn_lora (Accuracy: 0.8014, Loss: 0.4916, F1 Score: 0.8018)** and **vit_base (Accuracy: 0.8243, Loss: 0.4653, F1 Score: 0.8259)** are relatively stable but do not perform as well as **vit_lora** and as bad as **rn_base**.
+- Both **LoRA-injected models** are performing better than their base respective models. **ViT**, in general, still beats **ResNet** both **with and without LoRA** in terms of performance metrics, but is significantly more computational expensive and has much longer train time.
+
 
 ### 🧑‍💻 During evaluation:
--   The metrics from validation set indicate that the models are generalizing well to unseen data and not overfitting. All of the models also perform well in both classes and show no sign of bias. 
--   **vit_lora** (Accuracy: 0.95) maintains the same metrics while training and is the best-performance model. Both **rn_base** (0.72) and **vit_base** (0.82) have somewhat okay accuracy, while **rn_lora** has the worst accuracy and shows signs of bias toward the negative class (0.66).
--   Overall, the models have strong consistency between training and validation, except the LoRA-injected ResNet model.
+![image](https://github.com/user-attachments/assets/06c13878-c12d-476e-80b0-cc1e3c63e049)
+![image](https://github.com/user-attachments/assets/c329a0d7-ef1a-4744-b9db-ab00d720cb43)
+
+-   The metrics from validation set indicate that the ViT models are generalizing well to unseen data and not overfitting, while the ResNet models are biased toward negative class (fake).
+-   **vit_lora** (Accuracy: 0.9736) maintains the same metrics while training and is the best-performance model. **rn_base** (0.7027) has the worst accuracy and shows signs of bias toward the negative class, as well as **rn_lora** (0.7574) despite having a bit higher accuracy. **vit_base** (0.8447) lies in the middle in term of accuracy.
+-   Overall, the ViT models have strong consistency between training and validation, but not for the ResNet models.
 
 *These remarks are not the final version, further training iterations may help refine the performance of the models.*
 
