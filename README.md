@@ -50,8 +50,6 @@ Facial-Deepfake-Detection-with-ViT-and-ResNet50/
 ├── training.csv                # Training metrics
 ```
 
-_If previewing the notebook on GitHub gives an 'Unable to render code block' error, you can view it with this [link](https://colab.research.google.com/drive/1EIT73mxwuKam8RefiW5hFlWDyffHhj0H?usp=sharing) instead._
-
  --------
  
 ## 📊 Current Insight on Performance (3rd epoch)
