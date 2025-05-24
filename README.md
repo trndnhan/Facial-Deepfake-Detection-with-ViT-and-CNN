@@ -2,8 +2,6 @@
 # Facial-Deepfake-Detection-with-ViT-and-ResNet50 🎭🔍
 _This repository is part of my thesis project on deepfake detection using Vision Transformers (ViT) and Convolutional Neural Networks (CNN), both with and without Low-Rank Adaptation (LoRA)._
 
-_💜 This project has not finished yet, make sure to check this repo once in a while for further updates. I will update the training progress in the notebook file everyday and the evaluation statistic and graph after each epoch._
-
 ----------
 
 
@@ -24,8 +22,6 @@ _💜 This project has not finished yet, make sure to check this repo once in a 
 ### 🌐 Inference Demo:
 
 A **web-based demo** is built using **FastAPI**. This allows users to either upload an image or generate one via **StyleGAN3** and then select the model (ViT or ResNet50) for prediction. The models are hosted on HuggingFace's hub for easy access.
-
-_The models are not the final version, further training iterations may help refine the performance of the models._
 
 ---
 
@@ -73,8 +69,6 @@ Facial-Deepfake-Detection-with-ViT-and-ResNet50/
 -   **vit_lora** (Accuracy: 0.9736) maintains the same metrics while training and is the best-performance model. **rn_base** (0.7027) has the worst accuracy and shows signs of bias toward the negative class, as well as **rn_lora** (0.7574) despite having a bit higher accuracy. **vit_base** (0.8447) lies in the middle in term of accuracy.
 -   Overall, the ViT models have strong consistency between training and validation, but not for the ResNet models.
 
-*These remarks are not the final version, further training iterations may help refine the performance of the models.*
-
 ----------
 
 ## 🔗 Fine-Tuned Models on Hugging Face
@@ -87,14 +81,6 @@ You can access my current fine-tuned models (2 epochs) directly on Hugging Face:
 
 Feel free to explore the models and their capabilities!
 
-_The models are not the final version, further training iterations may help refine the performance of the models._
-
-----------
-
-## 📜 Thesis Paper 📝
--   **Title**: _Comparative Analysis of Vision Transformers and Convolutional Neural Networks for Deepfake Detection in Human Faces with Low-Rank Adaptation_
--   The thesis paper is currently **in progress** and not yet available to the public. Stay tuned for updates!
--   **Note**: While the web demo is fully functional, the models and notebooks are still **in development** and are **not final versions**.
 ----------
 
 ## 🚀 Web Demo Overview
